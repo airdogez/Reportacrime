@@ -1,0 +1,21 @@
+<%= simple_form_for @report, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :name %>
+  <%= error_span(@report[:name]) %>
+  <%= f.input :description %>
+  <%= error_span(@report[:description]) %>
+  <%= f.input :category_id,:collection => Category.all,:label_method => :name,:value_method => :id,:label => "Category" ,:include_blank => false %>
+  <%= error_span(@report[:category]) %>
+  <%= f.input :district_id,:collection => District.all,:label_method => :name,:value_method => :id,:label => "District" ,:include_blank => false %>
+  <%= error_span(@report[:district]) %>
+  <%= f.input :details %>
+  <%= error_span(@report[:details]) %>
+  <%= f.input :address%>
+  <%= error_span(@report[:address]) %>
+  <%= f.simple_fields_for :report_images do |i| %>
+        <%= i.file_field :photo, as: :file, multiple: true %>
+  <% end %>
+  <%= error_span(@report[:report_images]) %>
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                reports_path, :class => 'btn btn-default' %>
+<% end %>

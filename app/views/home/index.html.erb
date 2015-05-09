@@ -1,0 +1,8 @@
+<h1>Report a Crime</h1>
+
+<% if current_user %>
+<p>Welcome <%= @user.name =%> <%= @user.lastname %>. You have successfully logged in.</p>
+<p>Now try creating a new report or watch for nearby crimes.</p>
+<% else %>
+<p>Sign up to start using ReportACrime.</p>
+<% end %>

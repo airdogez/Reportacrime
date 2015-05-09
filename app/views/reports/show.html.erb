@@ -1,0 +1,39 @@
+<%- model_class = Report -%>
+<div class="page-header">
+  <h1>Report Details</h1>
+</div>
+
+<dl class="dl-horizontal col-md-offset-4">
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @report.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
+  <dd><%= @report.description %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:category_name) %>:</strong></dt>
+  <dd><%= @report.category.name%></dd>
+  <dt><strong><%= model_class.human_attribute_name(:district_name) %>:</strong></dt>
+  <dd><%= @report.district.name%></dd>
+  <dt><strong><%= model_class.human_attribute_name(:details) %>:</strong></dt>
+  <dd><%= @report.details %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:status_name) %>:</strong></dt>
+  <dd><%= @report.status.name%></dd>
+  &nbsp;
+  &nbsp;
+  &nbsp;
+  <div>
+      <strong> Crime Location: </strong>
+      <p>
+  <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@report.latitude}%2C#{@report.longitude}" %>
+      </p>
+      
+  </div>
+
+  <dt><strong><%= model_class.human_attribute_name(:latitude) %>:</strong></dt>
+  <dd><%= @report.latitude %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:longitude) %>:</strong></dt>
+  <dd><%= @report.longitude %></dd>
+</dl>
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              reports_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_report_path(@report), :class => 'btn btn-default' %>
