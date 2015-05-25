@@ -19,13 +19,27 @@
   &nbsp;
   &nbsp;
   &nbsp;
-  <div>
-      <strong> Crime Location: </strong>
-      <p>
-  <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@report.latitude}%2C#{@report.longitude}" %>
-      </p>
-      
+  <div style="width: 400px;">
+  <div id="map" style="width: 400px; height: 300px;"></div>
   </div>
+
+  <script type="text/javascript">
+    var map = new GMaps({
+      div: "#map",
+      lat: <%= @report.latitude %>,
+      lng: <%= @report.longitude %>,
+      width: '400px',
+      height: '300px',
+    });
+    map.addMarker({
+      lat: <%= @report.latitude %>,
+      lng: <%= @report.longitude %>,
+      title: "<%= @report.address %>",
+      click: function(e) {
+        alert('You clicked in this marker');
+      }
+    });
+  </script>
 
   <dt><strong><%= model_class.human_attribute_name(:latitude) %>:</strong></dt>
   <dd><%= @report.latitude %></dd>

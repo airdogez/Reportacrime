@@ -15,10 +15,6 @@ class ReportsController < ApplicationController
   
   def show
     respond_with(@report)
-    @hash = Gmaps4rails.build_markers(@report) do |report, marker|
-    marker.lat report.latitude
-    marker.lng report.longitude
-  end
   end
     
 
