@@ -14,3 +14,20 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+*.rbc
+capybara-*.html
+.rspec
+/public/system
+/coverage/
+/spec/tmp
+**.orig
+rerun.txt
+pickle-email-*.html
+
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~

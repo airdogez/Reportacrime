@@ -4,5 +4,6 @@ json.users @users do |user|
   json.lastname user.lastname
   json.email    user.email
   json.address  user.address
-
+  json.district user.district_id
+  json.phone    user.phone
 end
