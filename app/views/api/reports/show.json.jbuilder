@@ -1,4 +1,4 @@
-json.album do
+json.report do
   json.id     @report.id
   json.name   @report.name
   json.description  @report.description

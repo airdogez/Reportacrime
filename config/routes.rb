@@ -80,6 +80,6 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
   namespace :api do
-    resources :users, :reports
+    resources :users, :reports, :categories, :districts, :statuses
   end
 end

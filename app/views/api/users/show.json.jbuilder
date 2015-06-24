@@ -4,4 +4,7 @@ json.user do
   json.lastname @user.lastname
   json.email    @user.email
   json.address  @user.address
+  json.district @user.district_id
+  json.token    @user.token
+  json.phone    @user.phone
 end

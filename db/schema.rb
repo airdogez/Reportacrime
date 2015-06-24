@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150509194210) do
+ActiveRecord::Schema.define(version: 20150624023007) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -123,6 +123,7 @@ ActiveRecord::Schema.define(version: 20150509194210) do
     t.text     "address"
     t.integer  "district_id"
     t.integer  "phone"
+    t.string   "token"
   end
 
   add_index "users", ["district_id"], name: "index_users_on_district_id", using: :btree
