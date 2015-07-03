@@ -1,6 +1,9 @@
 class ReportsController < ApplicationController
+  
+  before_filter :require_login
+ 
   before_action :set_report, only: [:show, :edit, :update, :destroy]
-
+  
   respond_to :html
 
   def index
@@ -48,7 +51,7 @@ class ReportsController < ApplicationController
 
   private
     def set_report
-      @report = Report.find(params[:id])
+        @report = Report.find(params[:id])
     end
 
     def report_params

@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
+  devise_for :users
+  
   get 'crimes/index'
 
   get 'crimes/show'
 
   devise_for :admins
+  
   get 'home/index'
 
   get 'home/about'
@@ -17,10 +20,6 @@ Rails.application.routes.draw do
   resources :categories
 
   resources :districts
-  
-
-  devise_for :users
-  
   
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   
@@ -81,5 +80,6 @@ Rails.application.routes.draw do
   #   end
   namespace :api do
     resources :users, :reports, :categories, :districts, :statuses
+    mount_devise_token_auth_for 'User', at: 'auth', controllers: { omniauth_callbacks: "omniauth_token_callbacks" }
   end
 end

@@ -16,7 +16,7 @@
       <%= menu_text "Welcome " + @user.name %>
       <%= menu_item "Log out", destroy_user_session_path, :method => :delete %>
     <%else%>
-          <%= simple_form_for(@user, html: {class: 'navbar-form navbar-right form-inline'}, url: new_session_path(:user))  do |f| -%>
+          <%= simple_form_for(User.new, html: {class: 'navbar-form navbar-right form-inline'}, url: new_session_path(:user))  do |f| -%>
             <%= f.input :email, input_html: {size: 10}%>
             <%= f.input :password, input_html: {size: 10}%>
             <%= f.submit "Sign in" %>

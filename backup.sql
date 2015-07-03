@@ -16,6 +16,16 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Current Database: `reportacrime_development`
+--
+
+/*!40000 DROP DATABASE IF EXISTS `reportacrime_development`*/;
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `reportacrime_development` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci */;
+
+USE `reportacrime_development`;
+
+--
 -- Table structure for table `admins`
 --
 
@@ -48,7 +58,7 @@ CREATE TABLE `admins` (
 
 LOCK TABLES `admins` WRITE;
 /*!40000 ALTER TABLE `admins` DISABLE KEYS */;
-INSERT INTO `admins` VALUES (1,'admin@site.com','$2a$10$./qXfwEFQgnwYQx5CQcLX.fVPugZ6oEGdhLY3Io3ZUQtebw7kbGKG',NULL,NULL,'2015-05-09 19:05:18',1,'2015-05-09 19:05:18','2015-05-09 19:05:18','181.67.132.111','','2015-05-09 15:12:17','2015-05-09 19:05:18');
+INSERT INTO `admins` VALUES (1,'admin@site.com','$2a$10$./qXfwEFQgnwYQx5CQcLX.fVPugZ6oEGdhLY3Io3ZUQtebw7kbGKG',NULL,NULL,'2015-05-09 19:05:18',3,'2015-05-10 02:45:38','2015-05-10 01:15:09','200.0.118.173','200.0.118.173','2015-05-09 15:12:17','2015-05-10 02:45:38');
 /*!40000 ALTER TABLE `admins` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -164,7 +174,7 @@ CREATE TABLE `reports` (
   KEY `index_reports_on_user_id` (`user_id`),
   KEY `index_reports_on_district_id` (`district_id`),
   KEY `index_reports_on_status_id` (`status_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -173,7 +183,7 @@ CREATE TABLE `reports` (
 
 LOCK TABLES `reports` WRITE;
 /*!40000 ALTER TABLE `reports` DISABLE KEYS */;
-INSERT INTO `reports` VALUES (5,'Adsadas','sadfasdfsdfasdf',1,5,4,'23432rffa',1,'2015-05-09 16:16:46','2015-05-09 16:16:46',NULL,NULL,'asdfasdf234',NULL,NULL),(6,'dfgfdsg','dfsgsdfg',1,5,4,'3542rewfas',1,'2015-05-09 16:20:02','2015-05-09 16:20:02',NULL,NULL,'dfadf',NULL,NULL),(7,'Derpo','Derp',1,5,4,'Derpo derped',1,'2015-05-09 16:35:37','2015-05-09 16:35:37',-12.0824,-76.9856,'Av. Javier Prado',NULL,NULL),(8,'Neim','Deskripzhion',2,6,4,'Detailz',1,'2015-05-09 18:56:08','2015-05-09 18:56:08',NULL,NULL,'Adrezz',NULL,NULL),(9,'Ebola','Its catching up',2,7,4,'Who would hace tought',1,'2015-05-09 19:12:06','2015-05-09 19:12:06',48.8584,2.29448,'eiffel tower',NULL,NULL),(10,'TEst2','DETEDFSGDGFGSDGds\r\nfgdsfGSDFGsdfg\r\ndfsgsdf\r\ngs\r\ndfg',1,5,4,'DEREGE',1,'2015-05-09 19:28:53','2015-05-09 19:28:53',-34.4301,-58.7974,'La Camelias',NULL,NULL),(11,'TEst Images','Tesing images upload',1,5,4,'@ Images',1,'2015-05-09 19:31:16','2015-05-09 19:31:16',-12.082,-76.9282,'La molina',NULL,NULL),(12,'','',1,5,4,'',1,'2015-05-09 19:48:05','2015-05-09 19:48:05',NULL,NULL,'',NULL,1);
+INSERT INTO `reports` VALUES (5,'Adsadas','sadfasdfsdfasdf',1,5,4,'23432rffa',1,'2015-05-09 16:16:46','2015-05-09 16:16:46',NULL,NULL,'asdfasdf234',NULL,NULL),(6,'dfgfdsg','dfsgsdfg',1,5,4,'3542rewfas',1,'2015-05-09 16:20:02','2015-05-09 16:20:02',NULL,NULL,'dfadf',NULL,NULL),(7,'Derpo','Derp',1,5,4,'Derpo derped',1,'2015-05-09 16:35:37','2015-05-09 16:35:37',-12.0824,-76.9856,'Av. Javier Prado',NULL,NULL),(8,'Neim','Deskripzhion',2,6,4,'Detailz',1,'2015-05-09 18:56:08','2015-05-09 18:56:08',NULL,NULL,'Adrezz',NULL,NULL),(9,'Ebola','Its catching up',2,7,4,'Who would hace tought',1,'2015-05-09 19:12:06','2015-05-09 19:12:06',48.8584,2.29448,'eiffel tower',NULL,NULL),(10,'TEst2','DETEDFSGDGFGSDGds\r\nfgdsfGSDFGsdfg\r\ndfsgsdf\r\ngs\r\ndfg',1,5,4,'DEREGE',1,'2015-05-09 19:28:53','2015-05-09 19:28:53',-34.4301,-58.7974,'La Camelias',NULL,NULL),(11,'TEst Images','Tesing images upload',1,5,4,'@ Images',1,'2015-05-09 19:31:16','2015-05-09 19:31:16',-12.082,-76.9282,'La molina',NULL,NULL),(12,'','',1,5,4,'',1,'2015-05-09 19:48:05','2015-05-09 19:48:05',NULL,NULL,'',NULL,1),(13,'Test 2','Test report',2,8,4,'RGGDFSDFg',1,'2015-05-10 01:12:00','2015-05-10 01:12:00',-12.1416,-76.9918,'Surco',NULL,1),(14,'Test Report','Description',2,9,4,'Details',1,'2015-05-10 02:43:07','2015-05-10 02:43:07',-12.0892,-77.0236,'Javier prado',NULL,1),(15,'onho','Irjejd',2,10,4,'Ajajdjene',1,'2015-05-11 00:07:42','2015-05-11 00:09:39',-12.082,-76.9282,'la molina',NULL,1);
 /*!40000 ALTER TABLE `reports` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -312,7 +322,7 @@ CREATE TABLE `users` (
   UNIQUE KEY `index_users_on_email` (`email`),
   UNIQUE KEY `index_users_on_reset_password_token` (`reset_password_token`),
   KEY `index_users_on_district_id` (`district_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -321,7 +331,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'aqwssama@gmail.com','$2a$10$Wf1pF/0I5kMceCKwMJM9vO5ZUl6jXk8EOSHv6JChg01iylw/66OS.',NULL,NULL,NULL,1,'2015-05-09 05:04:46','2015-05-09 05:04:46','181.66.91.121','181.66.91.121','2015-05-09 05:04:46','2015-05-09 05:04:46',NULL,NULL,NULL,NULL,NULL),(2,'aqwssama2@gmail.com','$2a$10$zR37OcxAfhoLZVpHatz7h.vJFApG62d8GMDTbXXG98hBUEi3Q/GEa',NULL,NULL,NULL,1,'2015-05-09 05:45:32','2015-05-09 05:45:32','181.66.91.121','181.66.91.121','2015-05-09 05:45:32','2015-05-09 05:45:32',NULL,NULL,NULL,NULL,NULL),(3,'aqws3@fmail.com','$2a$10$bxzvE0oMJWUUWmHiDPbsyeyd53DCzgjGcXRs6OYBBTqTCITFV66Ta',NULL,NULL,NULL,2,'2015-05-09 14:04:46','2015-05-09 05:53:29','181.66.91.121','181.66.91.121','2015-05-09 05:53:29','2015-05-09 14:04:46',NULL,NULL,NULL,NULL,NULL),(4,'aqws3@f3mail.com','$2a$10$5o/AcVbsbo3GhBywB3swYuuVQaCG.tngYuebjSyo.NE24KOcF45SG',NULL,NULL,NULL,1,'2015-05-09 06:01:26','2015-05-09 06:01:26','181.66.91.121','181.66.91.121','2015-05-09 06:01:26','2015-05-09 06:01:26','andres','recedf',NULL,NULL,234545),(5,'aaaaa@gmail.com','$2a$10$FToKRkMvKfJr.tnR1jHB4OIdMlwkUBYnnfAzlnbA39154so5gch76',NULL,NULL,NULL,4,'2015-05-09 16:43:26','2015-05-09 14:22:57','201.230.106.51','181.66.91.121','2015-05-09 14:02:19','2015-05-09 16:43:26','Andres','Revolledo',NULL,NULL,3948234),(6,'123124@failtest.ke','$2a$10$I1YTuhAv90CbLh5VGWGANO7t.6ZgcG4ggB3YMAW2rUk203c2Ud6a2',NULL,NULL,NULL,1,'2015-05-09 18:55:21','2015-05-09 18:55:21','190.43.18.106','190.43.18.106','2015-05-09 18:55:21','2015-05-09 18:55:21','123','%',NULL,NULL,NULL),(7,'tezt@ded.com','$2a$10$wFbFoEGZWT0N.rxM8hhBDe14pYX9gdtaNEJWMkx.p4ZyKVFtE7O7K',NULL,NULL,NULL,1,'2015-05-09 19:09:43','2015-05-09 19:09:43','181.67.132.111','181.67.132.111','2015-05-09 19:09:43','2015-05-09 19:09:43','Derpo','Herpz',NULL,NULL,998643518);
+INSERT INTO `users` VALUES (1,'aqwssama@gmail.com','$2a$10$Wf1pF/0I5kMceCKwMJM9vO5ZUl6jXk8EOSHv6JChg01iylw/66OS.',NULL,NULL,NULL,1,'2015-05-09 05:04:46','2015-05-09 05:04:46','181.66.91.121','181.66.91.121','2015-05-09 05:04:46','2015-05-09 05:04:46',NULL,NULL,NULL,NULL,NULL),(2,'aqwssama2@gmail.com','$2a$10$zR37OcxAfhoLZVpHatz7h.vJFApG62d8GMDTbXXG98hBUEi3Q/GEa',NULL,NULL,NULL,1,'2015-05-09 05:45:32','2015-05-09 05:45:32','181.66.91.121','181.66.91.121','2015-05-09 05:45:32','2015-05-09 05:45:32',NULL,NULL,NULL,NULL,NULL),(3,'aqws3@fmail.com','$2a$10$bxzvE0oMJWUUWmHiDPbsyeyd53DCzgjGcXRs6OYBBTqTCITFV66Ta',NULL,NULL,NULL,2,'2015-05-09 14:04:46','2015-05-09 05:53:29','181.66.91.121','181.66.91.121','2015-05-09 05:53:29','2015-05-09 14:04:46',NULL,NULL,NULL,NULL,NULL),(4,'aqws3@f3mail.com','$2a$10$5o/AcVbsbo3GhBywB3swYuuVQaCG.tngYuebjSyo.NE24KOcF45SG',NULL,NULL,NULL,1,'2015-05-09 06:01:26','2015-05-09 06:01:26','181.66.91.121','181.66.91.121','2015-05-09 06:01:26','2015-05-09 06:01:26','andres','recedf',NULL,NULL,234545),(5,'aaaaa@gmail.com','$2a$10$FToKRkMvKfJr.tnR1jHB4OIdMlwkUBYnnfAzlnbA39154so5gch76',NULL,NULL,NULL,4,'2015-05-09 16:43:26','2015-05-09 14:22:57','201.230.106.51','181.66.91.121','2015-05-09 14:02:19','2015-05-09 16:43:26','Andres','Revolledo',NULL,NULL,3948234),(6,'123124@failtest.ke','$2a$10$I1YTuhAv90CbLh5VGWGANO7t.6ZgcG4ggB3YMAW2rUk203c2Ud6a2',NULL,NULL,NULL,1,'2015-05-09 18:55:21','2015-05-09 18:55:21','190.43.18.106','190.43.18.106','2015-05-09 18:55:21','2015-05-09 18:55:21','123','%',NULL,NULL,NULL),(7,'tezt@ded.com','$2a$10$wFbFoEGZWT0N.rxM8hhBDe14pYX9gdtaNEJWMkx.p4ZyKVFtE7O7K',NULL,NULL,NULL,1,'2015-05-09 19:09:43','2015-05-09 19:09:43','181.67.132.111','181.67.132.111','2015-05-09 19:09:43','2015-05-09 19:09:43','Derpo','Herpz',NULL,NULL,998643518),(8,'aaa@gmail.com','$2a$10$KYM.jmYFi8PZBoD.tcM50OPWxPb.tTKSLv61DkJ/9def/rfn4ux42',NULL,NULL,NULL,1,'2015-05-10 01:11:39','2015-05-10 01:11:39','200.0.118.173','200.0.118.173','2015-05-10 01:11:39','2015-05-10 01:11:39','andres','revolledo',NULL,NULL,23435436),(9,'test@test.com','$2a$10$97AdOknlvY//N5KFi0Yag.GddVyAYrVlxGah8KKSu6/1AjVPieEwi',NULL,NULL,NULL,1,'2015-05-10 02:41:26','2015-05-10 02:41:26','200.0.118.173','200.0.118.173','2015-05-10 02:41:26','2015-05-10 02:41:26','Andres','Revolledo',NULL,NULL,12345678),(10,'tedt@trst.com','$2a$10$0frB3FuG4y9ubpr7fhaJJOxLRzxYAJMPdakpsNKSPMFlyY9FKdNvi',NULL,NULL,NULL,1,'2015-05-11 00:06:43','2015-05-11 00:06:43','66.102.8.156','66.102.8.156','2015-05-11 00:06:43','2015-05-11 00:06:43','ada','galvez',NULL,NULL,12345678);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -334,4 +344,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-05-09 20:04:22
+-- Dump completed on 2015-05-26  7:09:40
