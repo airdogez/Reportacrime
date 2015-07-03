@@ -1,16 +1,9 @@
 class User < ActiveRecord::Base
+  acts_as_token_authenticatable
+  
   devise :database_authenticatable, :recoverable,
          :trackable, :validatable, :registerable,
          :omniauthable
-  include DeviseTokenAuth::Concerns::User
-
-  has_many :reports
+  has_many :crimes
   
-  def self.from_omniauth(auth)
-    where(auth.slice(:provider, :uid)).first_or_create do |user|
-      user.provider = auth.provider
-      user.uid = auth.uid
-      user.username = auth.info.nickname
-    end
-  end
 end

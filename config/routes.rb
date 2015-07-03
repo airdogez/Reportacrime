@@ -1,27 +1,15 @@
 Rails.application.routes.draw do
   devise_for :users
-  
-  get 'crimes/index'
-
-  get 'crimes/show'
-
   devise_for :admins
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   
   get 'home/index'
 
   get 'home/about'
   
-  get 'tags/:tag', to: 'reports#index', as: :tag
+  get 'tags/:tag', to: 'crimes#index', as: :tag
   
-  resources :reports
-
-  resources :statuses
-
-  resources :categories
-
-  resources :districts
-  
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  resources :crimes
   
   root 'home#index'
   # The priority is based upon order of creation: first created -> highest priority.
@@ -78,8 +66,7 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  namespace :api do
-    resources :users, :reports, :categories, :districts, :statuses
-    mount_devise_token_auth_for 'User', at: 'auth', controllers: { omniauth_callbacks: "omniauth_token_callbacks" }
+  namespace :api, defaults: {format: 'json'} do
+    resources :users, :crimes, :categories, :districts, :statuses
   end
 end

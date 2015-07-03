@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150702125428) do
+ActiveRecord::Schema.define(version: 20150703201453) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -38,15 +38,9 @@ ActiveRecord::Schema.define(version: 20150702125428) do
     t.datetime "updated_at"
   end
 
-  create_table "districts", force: true do |t|
-    t.text     "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "report_images", force: true do |t|
+  create_table "crime_images", force: true do |t|
     t.text     "description"
-    t.integer  "report_id"
+    t.integer  "crime_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "photo_file_name"
@@ -55,9 +49,9 @@ ActiveRecord::Schema.define(version: 20150702125428) do
     t.datetime "photo_updated_at"
   end
 
-  add_index "report_images", ["report_id"], name: "index_report_images_on_report_id", using: :btree
+  add_index "crime_images", ["crime_id"], name: "index_crime_images_on_crime_id", using: :btree
 
-  create_table "reports", force: true do |t|
+  create_table "crimes", force: true do |t|
     t.string   "name"
     t.text     "description"
     t.integer  "category_id"
@@ -74,10 +68,16 @@ ActiveRecord::Schema.define(version: 20150702125428) do
     t.boolean  "active"
   end
 
-  add_index "reports", ["category_id"], name: "index_reports_on_category_id", using: :btree
-  add_index "reports", ["district_id"], name: "index_reports_on_district_id", using: :btree
-  add_index "reports", ["status_id"], name: "index_reports_on_status_id", using: :btree
-  add_index "reports", ["user_id"], name: "index_reports_on_user_id", using: :btree
+  add_index "crimes", ["category_id"], name: "index_crimes_on_category_id", using: :btree
+  add_index "crimes", ["district_id"], name: "index_crimes_on_district_id", using: :btree
+  add_index "crimes", ["status_id"], name: "index_crimes_on_status_id", using: :btree
+  add_index "crimes", ["user_id"], name: "index_crimes_on_user_id", using: :btree
+
+  create_table "districts", force: true do |t|
+    t.text     "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "statuses", force: true do |t|
     t.string   "name"
@@ -106,8 +106,7 @@ ActiveRecord::Schema.define(version: 20150702125428) do
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
 
   create_table "users", force: true do |t|
-    t.string   "provider",                            null: false
-    t.string   "uid",                    default: "", null: false
+    t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -117,26 +116,21 @@ ActiveRecord::Schema.define(version: 20150702125428) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.string   "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
-    t.string   "unconfirmed_email"
-    t.string   "name"
-    t.string   "nickname"
-    t.string   "image"
-    t.string   "email"
-    t.text     "tokens"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "lastname"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.string   "name",                                null: false
+    t.integer  "phone"
+    t.string   "lastname",                            null: false
     t.text     "address"
     t.integer  "district_id"
-    t.integer  "phone"
+    t.string   "authentication_token"
+    t.string   "provider"
+    t.string   "uid"
   end
 
+  add_index "users", ["authentication_token"], name: "index_users_on_authentication_token", using: :btree
   add_index "users", ["district_id"], name: "index_users_on_district_id", using: :btree
-  add_index "users", ["email"], name: "index_users_on_email", using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-  add_index "users", ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true, using: :btree
 
 end
