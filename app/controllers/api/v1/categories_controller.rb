@@ -1,5 +1,5 @@
-module Api
-  class CategoriesController < Api::BaseController
+module Api::V1
+  class CategoriesController < Api::V1::BaseController
 
     private
 
