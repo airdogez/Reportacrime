@@ -10,5 +10,5 @@
 
 class District < ActiveRecord::Base
     has_many :users
-    has_many :reports
+    has_many :crimes
 end

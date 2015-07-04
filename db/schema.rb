@@ -118,9 +118,9 @@ ActiveRecord::Schema.define(version: 20150703201453) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.string   "name",                                null: false
+    t.string   "name",                   default: "", null: false
     t.integer  "phone"
-    t.string   "lastname",                            null: false
+    t.string   "lastname",               default: "", null: false
     t.text     "address"
     t.integer  "district_id"
     t.string   "authentication_token"

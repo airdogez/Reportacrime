@@ -2,11 +2,21 @@ RailsAdmin.config do |config|
 
   ### Popular gems integration
 
+  config.authorize_with do
+    authenticate_or_request_with_http_basic('Site Message') do |username, password|
+      username == 'foo' && password == 'bar'
+    end
+  end
+
+  config.main_app_name = ["Report a Crime", "Admin Board"]
+  # or somethig more dynamic
+  config.main_app_name = Proc.new { |controller| [ "Report a Crime", "Admin Board - #{controller.params[:action].try(:titleize)}" ] }
+  
   ## == Devise ==
-   config.authenticate_with do
-     warden.authenticate! scope: :admin
-   end
-   config.current_user_method(&:current_admin)
+  # config.authenticate_with do
+  #   warden.authenticate! scope: :user
+  # end
+  # config.current_user_method(&:current_user)
 
   ## == Cancan ==
   # config.authorize_with :cancan

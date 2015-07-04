@@ -2,15 +2,15 @@ class CrimesController < ApplicationController
   
   before_filter :require_login
  
-  before_action :set_report, only: [:show, :edit, :update, :destroy]
+  before_action :set_crime, only: [:show, :edit, :update, :destroy]
   
   respond_to :html
 
   def index
     if params[:tag]
-      @crimes= @user.crimes.tagged_with(params[:tag])
+      @crimes= current_user.crimes.tagged_with(params[:tag])
     else
-      @crimes= @user.crimes.all
+      @crimes= current_user.crimes.all
     end
     respond_with(@crimes)
   end
@@ -30,7 +30,7 @@ class CrimesController < ApplicationController
 
   def create
     @crime = Crime.new(crime_params)
-    @crime.user = @user
+    @crime.user = current_user 
     @crime.status_id = 1
     @crime.active = true
     @crime.save
