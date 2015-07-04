@@ -1,6 +1,6 @@
 class CrimesController < ApplicationController
   
-  before_filter :require_login
+  before_filter :authenticate_user!
  
   before_action :set_crime, only: [:show, :edit, :update, :destroy]
   

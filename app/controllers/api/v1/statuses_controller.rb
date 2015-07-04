@@ -1,9 +1,9 @@
-module Api
-  class StatusesController < Api::BaseController
+module Api::V1
+  class StatusesController < Api::V1::BaseController
 
     private
 
-    def statuses_params 
+    def status_params 
       params.require(:status).permit(:name)
     end
 

@@ -67,6 +67,8 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
   namespace :api, defaults: {format: 'json'} do
-    resources :users, :crimes, :categories, :districts, :statuses
+    namespace :v1 do
+      resources :users, :crimes, :categories, :districts, :statuses
+    end
   end
 end

@@ -3,7 +3,7 @@ module Api
 
     private
 
-    def categories_params 
+    def category_params 
       params.require(:categories).permit(:name, :description)
     end
 

@@ -2,7 +2,8 @@ class ApplicationController < ActionController::Base
   respond_to :html, :json
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
-  protect_from_forgery with: :null_session, :if => Proc.new { |c| c.request.format == 'application/json' }
+  protect_from_forgery with: :null_session
+  before_filter :verify_authenticity_token, :if => Proc.new { |c| c.request.format == 'application/json' }
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :set_user
 
@@ -18,11 +19,6 @@ class ApplicationController < ActionController::Base
   def set_user
     if user_signed_in?
       @user = current_user
-    end
-  end
-  def require_login
-    unless user_signed_in? 
-      redirect_to "/users/sign_up"
     end
   end
 end
