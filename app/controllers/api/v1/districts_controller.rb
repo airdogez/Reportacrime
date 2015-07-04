@@ -4,6 +4,7 @@ module Api::V1
     private
 
     def district_params 
+      params.require(:district).permit(:name)
     end
 
     def query_params

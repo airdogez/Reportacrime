@@ -1,8 +1,8 @@
+#TODO: Make Districts, Statuses and Categories read only.
 module Api::V1  
   class BaseController < ApplicationController
     protect_from_forgery with: :null_session
-    skip_before_filter :verify_authenticity_token, :if => Proc.new { |c| c.request.format == 'application/json' }
-    
+    #skip_before_filter :verify_authenticity_token, :if => Proc.new { |c| c.request.format == 'application/json' }
     before_action :set_resource, only: [:destroy, :show, :update]
     respond_to :json
     

@@ -1,6 +1,6 @@
+#To delete
 module Api::V1
   class UsersController < Api::V1::BaseController
-
     private
 
     def user_params
