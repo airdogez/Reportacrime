@@ -4,7 +4,7 @@ module Api::V1
     private
 
     def crime_params
-      params.require(:crime).permit(:name, :description, :category_id, :district_id, :status_id, :details, :address, :user_id, :latitude, :longitude)
+      params.require(:crime).permit(:name, :description, :category_id, :district_id, :status_id, :details, :address, :user_id, :latitude, :longitude, :tag_list, :crime_images)
     end
 
     def query_params

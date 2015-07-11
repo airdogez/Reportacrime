@@ -11,4 +11,5 @@ json.crime do
   
   json.latitude     @crime.latitude
   json.longitude    @crime.longitude
+  json.crime_images @crime.crime_images
 end

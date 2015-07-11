@@ -19,8 +19,8 @@
   &nbsp;
   &nbsp;
   &nbsp;
-  <div style="width: 400px;">
-  <div id="map" style="width: 400px; height: 300px;"></div>
+  <div class="google-map">
+  <div id="map" class="google-map"></div>
   </div>
 
   <script type="text/javascript">
@@ -28,8 +28,8 @@
       div: "#map",
       lat: <%= @crime.latitude %>,
       lng: <%= @crime.longitude %>,
-      width: '400px',
-      height: '300px',
+      width: '100%',
+      height: '400px'
     });
     map.addMarker({
       lat: <%= @crime.latitude %>,

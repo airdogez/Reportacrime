@@ -1,9 +1,11 @@
+<div class="page-header">
 <h1>Report a Crime</h1>
+</div>
 
 <% if current_user %>
-<p>Welcome <%= @user.name =%> <%= @user.lastname %>. You have successfully logged in.</p>
-<p>Now try creating a new report or watch for nearby crimes.</p>
+<p class="text-paragraph">Welcome <%= @user.name =%> <%= @user.lastname %>. You have successfully logged in.</p>
+<p class="text-paragraph">Now try creating a new report or watch for nearby crimes.</p>
 <% else %>
-<p>Sign up to start using ReportACrime.</p>
+<p class="text-paragraph">Sign up to start using ReportACrime.</p>
 <% end %>
 

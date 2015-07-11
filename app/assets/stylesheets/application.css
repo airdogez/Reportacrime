@@ -14,3 +14,77 @@
  *= require_selfi
   *= require bootstrap_and_overrides
  */
+ body{
+     background-color: #FAFCFC;
+ }
+ 
+.nav {
+    color: #FFF !important;
+}
+.navbar {
+    background-color: #428eFF;
+    color: #F0F3BD;
+    border-radius: 0px;
+    border: 0;
+    border-color: #428EFF;
+    margin-bottom: 20px;
+    box-shadow: 0 10px rgba(0,0,0,0.2);
+}
+
+ul.nav.navbar-nav{
+    height: 100%;
+}
+
+.navbar-default .navbar-brand {
+    color: #eeF;
+    padding-top: 10px;
+}
+
+a{
+    color: #000;
+}
+
+.navbar-default .navbar-nav > .active > a {
+    background-color: #333;   
+    color: #EEE;
+}
+.navbar-default .navbar-nav > .active > a:hover {
+    background-color: #C7C8C8;   
+    color: #333;
+}
+.navbar-default .navbar-nav > li > a {
+    color: #EEE;
+    
+}
+
+.btn-login{
+    color: #000;
+    background-color: #333;
+}
+
+a:hover.btn-login{
+    background-color: #000;
+}
+
+.welcome-msg{
+    color: #333 !important;
+}
+
+.navbar-right {
+    background-color: #C7C8C8;
+    border-color: #FAFCFC;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #333;
+}
+.navbar-default .navbar-nav > li > a:hover {
+  background-color: #333;
+  color: #FFF;
+}
+
+.menu_icon {
+    height: 32px;
+    width: 32px;
+}
+

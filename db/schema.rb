@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(version: 20150703201453) do
   add_index "crimes", ["user_id"], name: "index_crimes_on_user_id", using: :btree
 
   create_table "districts", force: true do |t|
-    t.text     "name"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -119,7 +119,7 @@ ActiveRecord::Schema.define(version: 20150703201453) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "name",                   default: "", null: false
-    t.integer  "phone"
+    t.string   "phone",                  default: "", null: false
     t.string   "lastname",               default: "", null: false
     t.text     "address"
     t.integer  "district_id"

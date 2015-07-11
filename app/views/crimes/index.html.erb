@@ -2,6 +2,7 @@
 <div class="page-header">
   <h1>My Crime Reports</h1>
 </div>
+<div class="table-responsive">
 <table class="table table-striped">
   <thead>
     <tr>
@@ -36,7 +37,15 @@
     <% end %>
   </tbody>
 </table>
+</div>
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_crime_path,
             :class => 'btn btn-primary' %>
+            
+<div id="tag_cloud">
+  <a>Tags: </a>
+  <% tag_cloud @crimes.tag_counts, %w{s m l} do |tag, css_class| %>
+    <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+  <% end %>
+</div>

@@ -5,6 +5,6 @@ class CrimeImagesController < ApplicationController
     end
 
     def crime_params
-      params.require(:crime_image).permit(:description, :photo)
+      params.require(:crime_image).permit(:description, :photo, :crime_images_attributes)
     end
 end

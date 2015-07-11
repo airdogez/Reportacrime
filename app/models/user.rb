@@ -10,5 +10,6 @@ class User < ActiveRecord::Base
   
   #Relationships
   has_many :crimes
+  belongs_to :district
   
 end

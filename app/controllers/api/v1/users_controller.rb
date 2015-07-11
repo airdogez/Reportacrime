@@ -4,7 +4,7 @@ module Api::V1
     private
 
     def user_params
-      params.require(:user).permit(:name, :lastname, :email, :address, :phone, :authentication_token, :district_id)
+      params.require(:user).permit(:name, :lastname, :email, :address, :phone, :authentication_token, :district)
     end
 
     def query_params
